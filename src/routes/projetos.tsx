@@ -137,6 +137,21 @@ function Projetos() {
                   </li>
                 ))}
               </ul>
+              <div
+                className="mt-6 flex flex-wrap gap-2"
+                aria-label="Tecnologias do Jacaré Utilidades"
+              >
+                {["HTML", "CSS", "JavaScript", "Node.js", "Supabase", "Mercado Pago"].map(
+                  (tech) => (
+                    <span
+                      key={tech}
+                      className="rounded-md bg-secondary px-2.5 py-1 font-mono text-[10px] text-muted-foreground"
+                    >
+                      {tech}
+                    </span>
+                  ),
+                )}
+              </div>
               <div className="mt-7 flex flex-wrap gap-3 border-t pt-6">
                 <a
                   href="https://www.jacareutilidades.com.br/"

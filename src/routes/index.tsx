@@ -9,7 +9,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Portfólio de Marco Rodrigues, Analista de Projetos na IVECO, focado em Engenharia de Software, Dados e IA.",
+          "Portfólio de Marco Rodrigues, Analista de Projetos na IVECO Brasil, via EDC Group, e estudante de Ciência da Computação. Engenharia de Software, Dados e IA aplicada.",
       },
       { property: "og:title", content: "Marco Rodrigues — Portfólio" },
       { property: "og:description", content: "Engenharia de Software, Dados e IA aplicada." },
@@ -25,8 +25,9 @@ const skills = [
     t: "Desenvolvimento de Software",
     d: [
       "Backend, APIs e aplicações em Python, Java e SQL",
-      "Desenvolvimento orientado a problemas",
-      "Tratamento de dados e automação",
+      "Aplicações web e móveis em projetos práticos",
+      "Automação de tarefas e processamento de dados",
+      "Git e GitHub para versionamento de código",
     ],
   },
   {
@@ -35,12 +36,14 @@ const skills = [
       "Scrum na prática profissional e acadêmica",
       "Arquitetura modular em camadas e serviços",
       "Testes automatizados e validação de regras",
+      "Interesse em análise de requisitos",
     ],
   },
   {
     t: "Dados",
     d: [
-      "PostgreSQL, importação, normalização e deduplicação",
+      "SQL e PostgreSQL para consulta e organização de dados",
+      "Importação, normalização e deduplicação",
       "Análise de desempenho e cache",
       "Indicadores e métricas",
     ],
@@ -85,8 +88,9 @@ function Index() {
             Analista de Projetos · Engenharia de Software
           </p>
           <p className="mt-6 max-w-2xl leading-relaxed text-muted-foreground">
-            Construo soluções eficientes e orientadas a resultados com foco em Engenharia de
-            Software, Dados e IA — hoje no time de Advanced Diagnostics da IVECO Brasil.
+            Sou estudante de Ciência da Computação e atuo como Analista de Projetos na IVECO Brasil,
+            via EDC Group, com sistemas, dados e automações. Meu interesse em Engenharia de Software
+            vai do entendimento das necessidades ao desenvolvimento e à qualidade das soluções.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
@@ -165,7 +169,10 @@ function Index() {
 
         <Section n="04" title="Contato">
           <div className="glass rounded-xl p-8 text-center">
-            <p className="text-muted-foreground">Aberto a novas oportunidades e desafios.</p>
+            <p className="text-muted-foreground">
+              Aberto a oportunidades júnior em Engenharia de Software: desenvolvimento, qualidade e
+              análise de requisitos.
+            </p>
             <a
               href="mailto:marcopaulosrodrigues04@gmail.com"
               className="mt-4 block break-all text-lg font-semibold text-gradient sm:text-xl md:text-2xl"
