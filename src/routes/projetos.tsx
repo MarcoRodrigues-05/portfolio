@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowDown, ArrowUpRight, Github, Globe, GraduationCap } from "lucide-react";
 import { SiteNav } from "@/components/SiteNav";
+import { PageNext } from "@/components/PageNext";
 
 export const Route = createFileRoute("/projetos")({
   head: () => ({
@@ -266,6 +267,7 @@ function Projetos() {
             <ArrowUpRight size={15} aria-hidden="true" />
           </a>
         </aside>
+        <PageNext to="/" />
         <footer className="pb-2 pt-10 text-center font-mono text-xs text-muted-foreground">
           © 2026 Marco Paulo Soares Rodrigues
         </footer>

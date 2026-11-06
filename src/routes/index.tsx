@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteNav } from "@/components/SiteNav";
+import { PageNext } from "@/components/PageNext";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -174,6 +175,7 @@ function Index() {
             <p className="mt-2 font-mono text-sm text-muted-foreground">(31) 99803-8187</p>
           </div>
         </Section>
+        <PageNext to="/projetos" />
         <footer className="py-10 text-center font-mono text-xs text-muted-foreground">
           © 2026 Marco Paulo Soares Rodrigues
         </footer>
