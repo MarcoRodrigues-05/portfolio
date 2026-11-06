@@ -1,0 +1,198 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --font-display: "Space Grotesk", sans-serif;
+  --font-sans: "DM Sans", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+}
+
+:root {
+  --radius: 0.75rem;
+  --background: oklch(0.14 0.01 250);
+  --foreground: oklch(0.95 0.01 250);
+  --card: oklch(0.18 0.012 250);
+  --card-foreground: oklch(0.95 0.01 250);
+  --popover: oklch(0.18 0.012 250);
+  --popover-foreground: oklch(0.95 0.01 250);
+  --primary: oklch(0.85 0.17 160);
+  --primary-foreground: oklch(0.15 0.02 250);
+  --secondary: oklch(0.23 0.015 250);
+  --secondary-foreground: oklch(0.95 0.01 250);
+  --muted: oklch(0.22 0.012 250);
+  --muted-foreground: oklch(0.68 0.02 250);
+  --accent: oklch(0.75 0.14 200);
+  --accent-foreground: oklch(0.15 0.02 250);
+  --destructive: oklch(0.65 0.2 25);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(1 0 0 / 9%);
+  --input: oklch(1 0 0 / 12%);
+  --ring: oklch(0.85 0.17 160);
+  --gradient-text: linear-gradient(120deg, var(--primary), var(--accent));
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    background-image:
+      radial-gradient(
+        60rem 30rem at 85% -10%,
+        color-mix(in oklab, var(--primary) 12%, transparent),
+        transparent
+      ),
+      radial-gradient(
+        50rem 30rem at -10% 30%,
+        color-mix(in oklab, var(--accent) 8%, transparent),
+        transparent
+      );
+    background-attachment: fixed;
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+  }
+}
+
+@utility text-gradient {
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility glass {
+  background: color-mix(in oklab, var(--card) 70%, transparent);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+}
+
+.project-featured {
+  background: linear-gradient(
+    135deg,
+    color-mix(in oklab, var(--primary) 5%, var(--card)),
+    var(--card)
+  );
+}
+.project-cover-jacare {
+  background: radial-gradient(ellipse at 70% 20%, #fffef1, transparent 65%), #e4edd5;
+}
+.project-cover-nutrilife {
+  background: radial-gradient(ellipse at 50% 40%, #ffffff, #e2f0e7);
+}
+.project-cover-utrip {
+  background: #e7edf8;
+}
+.project-academic {
+  transition: border-color 180ms ease;
+}
+.project-academic:hover {
+  border-color: color-mix(in oklab, var(--primary) 40%, transparent);
+}
+
+/* A brief invitation, followed by a long quiet interval. No timers or layout changes. */
+.nav-invite {
+  position: relative;
+  isolation: isolate;
+}
+.nav-invite-label {
+  display: inline-block;
+}
+.nav-invite[aria-current="page"] {
+  color: var(--primary);
+}
+.nav-invite-ring {
+  position: absolute;
+  inset: -5px -7px;
+  width: calc(100% + 14px);
+  height: calc(100% + 10px);
+  pointer-events: none;
+  opacity: 0;
+  color: var(--primary);
+}
+.nav-invite-ring path {
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+.nav-invite:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 4px;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .nav-invite[aria-current="page"]:not(:hover):not(:focus-visible) .nav-invite-ring {
+    animation: nav-invite-ring-visibility 5s ease-in-out 1.2s infinite;
+  }
+  .nav-invite[aria-current="page"]:not(:hover):not(:focus-visible) .nav-invite-ring path {
+    animation: nav-invite-ring-draw 5s ease-in-out 1.2s infinite;
+  }
+  .nav-invite[aria-current="page"]:not(:hover):not(:focus-visible) .nav-invite-label {
+    animation: nav-invite-label-lift 5s ease-in-out 1.2s infinite;
+  }
+}
+@keyframes nav-invite-ring-visibility {
+  0% {
+    opacity: 0;
+  }
+  7%,
+  31% {
+    opacity: 0.8;
+  }
+  46%,
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes nav-invite-ring-draw {
+  0% {
+    stroke-dashoffset: 1;
+  }
+  22%,
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes nav-invite-label-lift {
+  0%,
+  46%,
+  100% {
+    transform: scale(1);
+  }
+  17%,
+  29% {
+    transform: scale(1.04);
+  }
+}
