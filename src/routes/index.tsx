@@ -169,13 +169,9 @@ function Index() {
 
         <Section n="04" title="Contato">
           <div className="glass rounded-xl p-8 text-center">
-            <p className="text-muted-foreground">
-              Aberto a oportunidades júnior em Engenharia de Software: desenvolvimento, qualidade e
-              análise de requisitos.
-            </p>
             <a
               href="mailto:marcopaulosrodrigues04@gmail.com"
-              className="mt-4 block break-all text-lg font-semibold text-gradient sm:text-xl md:text-2xl"
+              className="block break-all text-lg font-semibold text-gradient sm:text-xl md:text-2xl"
             >
               marcopaulosrodrigues04@gmail.com
             </a>
