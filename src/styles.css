@@ -153,13 +153,13 @@
   outline-offset: 4px;
 }
 @media (prefers-reduced-motion: no-preference) {
-  .nav-invite[aria-current="page"]:not(:hover):not(:focus-visible) .nav-invite-ring {
+  .nav-invite:not([aria-current="page"]):not(:hover):not(:focus-visible) .nav-invite-ring {
     animation: nav-invite-ring-visibility 5s ease-in-out 1.2s infinite;
   }
-  .nav-invite[aria-current="page"]:not(:hover):not(:focus-visible) .nav-invite-ring path {
+  .nav-invite:not([aria-current="page"]):not(:hover):not(:focus-visible) .nav-invite-ring path {
     animation: nav-invite-ring-draw 5s ease-in-out 1.2s infinite;
   }
-  .nav-invite[aria-current="page"]:not(:hover):not(:focus-visible) .nav-invite-label {
+  .nav-invite:not([aria-current="page"]):not(:hover):not(:focus-visible) .nav-invite-label {
     animation: nav-invite-label-lift 5s ease-in-out 1.2s infinite;
   }
 }
